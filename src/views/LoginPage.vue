@@ -1,18 +1,20 @@
-<!-- Login.vue -->
-
 <template>
-  <div>
-    <h2>Prijava</h2>
-    <div class="form-group">
-      <input type="text" v-model="username" placeholder="Korisničko ime">
+  <div class="login-container">
+    <div class="login-form">
+      <h2>Prijava</h2>
+      <div class="form-group">
+        <input type="text" v-model="username" placeholder="Korisničko ime">
+      </div>
+      <div class="form-group">
+        <input type="password" v-model="password" placeholder="Lozinka">
+      </div>
+      <button class="login-btn" @click="login">Prijavi se</button>
+      <div class="links">
+        <router-link to="SignUp">Registriraj se</router-link>
+      </div>
     </div>
-    <div class="form-group">
-      <input type="password" v-model="password" placeholder="Lozinka">
-    </div>
-    <button class="login-btn" @click="login">Prijavi se</button>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -57,26 +59,64 @@ export default {
 };
 </script>
 
+
 <style scoped>
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Povećaj ili smanji prema potrebi */
+  width: 100%;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
+
 input {
-  width: 15%;
+  width: calc(100% - 20px); /* Smanjio sam širinu za 20px radi sličnosti s Facebookom */
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+  font-size: 14px;
 }
+
 .login-btn {
-  width: 10%;
+  width: calc(100% - 20px); /* Smanjio sam širinu za 20px radi sličnosti s Facebookom */
   padding: 10px;
-  background-color: #007bff;
+  background-color: #3897f0;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
 }
+
 .login-btn:hover {
-  background-color: #0056b3;
+  background-color: #3578e5;
+}
+
+.links {
+  margin-top: 10px;
+}
+
+.links a {
+  color: #385185;
+  text-decoration: none;
+  font-weight: bold;
 }
 </style>

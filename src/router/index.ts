@@ -1,34 +1,29 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// router/index.js
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import LoginPage from '../views/LoginPage.vue';
+import HomePage from '../views/HomePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
-
   {
     path: '/SignUp',
     name: 'SignUp',
-    component: () => import( '../views/SignUp.vue')
-
+    component: () => import('../views/SignUp.vue'),
   },
-
   {
-    path: '/LoginPage',
+    path: '/',
     name: 'LoginPage',
-
-    component: () => import( '../views/LoginPage.vue')
+    component: LoginPage,
   },
-
   {
     path: '/HomePage',
     name: 'HomePage',
-
-    component: () => import( '../views/HomePage.vue')
-  }
-
-]
+    component: HomePage,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
