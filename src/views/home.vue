@@ -10,7 +10,8 @@
 
     <nav>
       <ul>
-        <li><router-link to="/apartmani">Apartmani</router-link></li>
+        <li><router-link to="/home">Početna</router-link></li>
+        <li><router-link to="/apartman">Apartmani</router-link></li>
         <li><router-link to="/studio">Studio</router-link></li>
         <li><router-link to="/bazen">Bazen</router-link></li>
         <li><router-link to="/igraonica">Igraonica</router-link></li>

@@ -49,6 +49,19 @@ let Auth = {
 
     return true;
   },
+
+  async loginAdmin(username, password) {
+    let response = await Service.post("/admin", {
+      username: username,
+      password: password,
+    });
+    let user = response.data;
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    return true;
+  },
+
   logout() {
     localStorage.removeItem("user");
   },

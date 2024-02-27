@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <div class="login-form">
-      <h2>Prijava</h2>
+      <h2>Prijava korisnika</h2>
       <div class="form-group">
         <input type="text" v-model="username" placeholder="Korisničko ime">
       </div>
@@ -11,6 +11,9 @@
       <button class="login-btn" @click="login">Prijavi se</button>
       <div class="links">
         <router-link to="/register">Registriraj se</router-link>
+      </div>
+      <div class="links">
+        <router-link to="/adminLogin">Prijavi se kao administrator</router-link>
       </div>
     </div>
   </div>

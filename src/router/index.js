@@ -22,6 +22,41 @@ const routes = [
     name: 'home',
     component: () => import('../views/home.vue'),
   },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/admin.vue'),
+  },
+  {
+    path: '/adminLogin',
+    name: 'adminLogin',
+    component: () => import('../views/adminLogin.vue'),
+  },
+  {
+    path: '/igraonica',
+    name: 'igraonica',
+    component: () => import('../views/igraonica.vue'),
+  },
+  {
+    path: '/dvoriste',
+    name: 'dvoriste',
+    component: () => import('../views/dvoriste.vue'),
+  },
+  {
+    path: '/apartman',
+    name: 'apartman',
+    component: () => import('../views/apartman.vue'),
+  },
+  {
+    path: '/bazen',
+    name: 'bazen',
+    component: () => import('../views/bazen.vue')},
+    {
+      path: '/studio',
+      name: 'studio',
+      component: () => import('../views/studio.vue'),
+    },
+  
 ];
 
 const router = createRouter({
