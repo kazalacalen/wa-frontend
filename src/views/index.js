@@ -111,5 +111,36 @@ let Auth = {
       return false;
     },
   },
+  async sendFormToBackend(formData) {
+    try {
+      let route;
+      switch (formData.type) {
+        case 'bazen':
+          route = '/bazen';
+          break;
+        case 'apartman':
+          route = '/apartman';
+          break;
+        case 'studio':
+          route = '/studio';
+          break;
+        case 'dvoriste':
+          route = '/dvoriste';
+          break;
+        case 'igraonica':
+          route = '/igraonica';
+          break;
+        default:
+          throw new Error('Unsupported form type');
+      }
+  
+      let response = await Service.post(route, formData);
+      return response.data;
+    } catch (error) {
+      console.error("Error sending form data to backend:", error);
+      throw new Error("Error sending form data to backend");
+    }
+  },
+  
 };
 export { Service, Auth }; // exportamo Service za ručne pozive ili Posts za
