@@ -3,7 +3,7 @@
       <header>
         <h1>Dobrodošli u admina</h1>
         <div>
-          <p>Prijavljeni korisnik: {{ currentUser }}</p>
+        
           <button @click="logout">Odjava</button>
         </div>
       </header>

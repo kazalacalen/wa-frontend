@@ -114,7 +114,7 @@ export default {
       );
 
       if (success == true) {
-        this.$router.push({ name: "home" }); 
+        this.$router.push({ name: "login" }); 
 
    
       }

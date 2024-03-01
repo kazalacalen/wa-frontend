@@ -2,8 +2,8 @@
   <div>
     <header>
       <h1>Dobrodošli na početnu stranicu</h1>
-      <div>
-        <p>Prijavljeni korisnik: {{ currentUser }}</p>
+      <div class="user-info">
+        <p>Prijavljeni korisnik: {{ currentUser.username }}</p>
         <button @click="logout">Odjava</button>
       </div>
     </header>
@@ -38,6 +38,30 @@
     color: #fff;
     padding: 20px;
     text-align: center;
+  }
+
+  .user-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .user-info p {
+    margin: 0;
+    margin-right: 10px;
+  }
+
+  .user-info button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .user-info button:hover {
+    background-color: #c82333;
   }
 
   nav {
@@ -76,11 +100,10 @@
 <script>
 import { Auth } from "./index";
 
-
 export default {
   data() {
     return {
-      usersData: "",
+      currentUser: {}, // Initialize currentUser
     };
   },
   methods: {
@@ -90,15 +113,13 @@ export default {
       });
     },
     async getName() {
-      this.usersData = await Auth.getUser();
-      console.log(this.usersData);
+      this.currentUser = await Auth.getUser(); // Set currentUser
+      console.log(this.currentUser);
     },
   },
   async mounted() {
- 
     this.$store.dispatch("setUser", this.$store.getters.currentUser);
-    this.usersData = await Auth.getName();
+    await this.getName(); // Call getName to set currentUser
   },
 };
 </script>
-
