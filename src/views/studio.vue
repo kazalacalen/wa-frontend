@@ -70,6 +70,12 @@ export default {
     },
     async submitForm() {
       try {
+        // Dodajte korisnika, datum i tip u formData objekt prije slanja
+        this.formData.user = this.currentUser.username;
+        this.formData.date = this.currentDate;
+        this.formData.tip = this.tip;
+
+        // Pošaljite podatke na backend
         await Service.post("/studio", this.formData);
         console.log("Form data sent successfully to the backend");
       } catch (error) {
@@ -78,7 +84,6 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch("setUser", this.$store.getters.currentUser);
     this.getName();
     this.currentDate = new Date().toLocaleString();
     this.tip = this.$route.name;

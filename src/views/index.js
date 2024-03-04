@@ -32,7 +32,6 @@ let Auth = {
     await Service.post("/register", {
       username: username,
       password: password,
-
     });
 
     return true;
@@ -141,6 +140,16 @@ let Auth = {
       throw new Error("Error sending form data to backend");
     }
   },
-  
+
+  async getFromBackend(route) {
+    try {
+      let response = await Service.get(route);
+      return response.data;
+    } catch (error) {
+      console.error("Error getting data from backend:", error);
+      throw new Error("Error getting data from backend");
+    }
+  },
 };
-export { Service, Auth }; // exportamo Service za ručne pozive ili Posts za
+
+export { Service, Auth };

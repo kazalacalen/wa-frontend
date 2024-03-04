@@ -56,6 +56,31 @@ const routes = [
       name: 'studio',
       component: () => import('../views/studio.vue'),
     },
+    {
+      path: '/admin.apartman',
+      name: 'admin.apartman',
+      component: () => import('../views/admin.apartman.vue'),
+    },
+    {
+      path: '/admin.bazen',
+      name: 'admin.bazen',
+      component: () => import('../views/admin.bazen.vue'),
+    },
+    {
+      path: '/admin.studio',
+      name: 'admin.studio',
+      component: () => import('../views/admin.studio.vue'),
+    },
+    {
+      path: '/admin.igraonica',
+      name: 'admin.igraonica',
+      component: () => import('../views/admin.igraonica.vue'),
+    },
+    {
+      path: '/admin.dvoriste',
+      name: 'admin.dvoriste',
+      component: () => import('../views/admin.dvoriste.vue'),
+    },
   
 ];
 
