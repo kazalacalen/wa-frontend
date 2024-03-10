@@ -20,7 +20,7 @@
   </template>
   
   <script>
-  // Promijenjena putanja za import
+  
   import { Auth } from "./index";
   
   
@@ -35,13 +35,13 @@
     methods: {
       async login() {
         try {
-          // Promijenjena metoda za pozivanje loginPage
+       
           await Auth.loginAdmin(this.username, this.password);
-          // Redirekcija na 'home' ako je prijava uspješna
+        
           this.$router.push({ name: "admin" }); 
         } catch (error) {
           console.error("Greška prilikom prijave:", error);
-          // Ovdje možete dodati logiku za obradu greške pri prijavi
+       
         }
       },
     },

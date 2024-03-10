@@ -70,12 +70,12 @@ export default {
     },
     async submitForm() {
       try {
-        // Dodajte korisnika, datum i tip u formData objekt prije slanja
+       
         this.formData.user = this.currentUser.username;
         this.formData.date = this.currentDate;
         this.formData.tip = this.tip;
 
-        // Pošaljite podatke na backend
+    
         await Service.post("/igraonica", this.formData);
         console.log("Form data sent successfully to the backend");
       } catch (error) {

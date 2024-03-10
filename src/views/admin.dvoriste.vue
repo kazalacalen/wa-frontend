@@ -57,7 +57,7 @@
       },
       async fetchDataFromBackend() {
         try {
-          const response = await axios.get('http://localhost:3000/dvoristeget');
+          const response = await axios.get('https://wa-backend-fuue.onrender.com/dvoristeget');
           this.fetchedData = response.data;
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -108,7 +108,7 @@
     }
   
     .user-info p {
-      margin-right: 10px; /* Dodajemo razmak između korisničkog imena i gumba za odjavu */
+      margin-right: 10px; 
     }
   
     nav {

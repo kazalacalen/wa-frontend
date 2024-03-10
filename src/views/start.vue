@@ -26,7 +26,7 @@
   .register-button {
     padding: 10px 20px;
     margin: 0 10px;
-    background-color: #4CAF50; /* Zelena boja */
+    background-color: #4CAF50; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -36,7 +36,7 @@
   
   .login-button:hover,
   .register-button:hover {
-    background-color: #45a049; /* Tamnija nijansa zelene */
+    background-color: #45a049; 
   }
   </style>
   

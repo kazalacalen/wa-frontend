@@ -20,8 +20,8 @@
     </nav>
 
     <section>
-      <h2>Dobrodošli u naše objekte</h2>
-      <p>Odaberite jednu od ponuđenih opcija iz izbornika.</p>
+      <h2>Dobrodošli na početnu stranicu</h2>
+      <p>Odaberite s kojim dijelom kuće za odmor imate problem za prijaviti</p>
     </section>
   </div>
 </template>
@@ -103,7 +103,7 @@ import { Auth } from "./index";
 export default {
   data() {
     return {
-      currentUser: {}, // Initialize currentUser
+      currentUser: {}, 
     };
   },
   methods: {
@@ -113,13 +113,13 @@ export default {
       });
     },
     async getName() {
-      this.currentUser = await Auth.getUser(); // Set currentUser
+      this.currentUser = await Auth.getUser(); 
       console.log(this.currentUser);
     },
   },
   async mounted() {
     this.$store.dispatch("setUser", this.$store.getters.currentUser);
-    await this.getName(); // Call getName to set currentUser
+    await this.getName(); 
   },
 };
 </script>

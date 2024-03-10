@@ -105,7 +105,7 @@ import { Auth } from "./index";
 export default {
   data() {
     return {
-      currentUser: {}, // Initialize currentUser
+      currentUser: {}, 
     };
   },
   methods: {
@@ -115,13 +115,13 @@ export default {
       });
     },
     async getName() {
-      this.currentUser = await Auth.getUser(); // Set currentUser
+      this.currentUser = await Auth.getUser();
       console.log(this.currentUser);
     },
   },
   async mounted() {
     this.$store.dispatch("setUser", this.$store.getters.currentUser);
-    await this.getName(); // Call getName to set currentUser
+    await this.getName(); 
   },
 };
 </script>
